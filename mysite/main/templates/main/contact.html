@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}Sneaky Restaurant - Home {% endblock %}</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+
+	<link rel="icon" href="{% static 'main/img/Fevicon.png' %}" type="{% static 'main/image/png' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/magnific-popup.css' %}">
+
+      <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'main/css/style.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'main/css/style.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+
+<header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <a class="navbar-brand logo_h" href="index.html"><img src="{% static 'main/img/logo.png' %}" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+ <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+              {% if user.is_authenticated %}
+
+               <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">{{user.username}}</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'password_change' %}">Change password</a>
+
+                  <li class="nav-item"><a class="nav-link" href="{% url 'history' %}">History of oreders</a>
+
+                  <li class="nav-item"><a class="nav-link" href="{% url 'password_change' %}"></a>
+                </ul>
+							</li>
+
+
+                 <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Time</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'din' %}">Dinner</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'res' %}">Breakfast</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'res' %}">Lunch</a></li>
+                </ul>
+
+							</li>
+
+
+
+
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Restaurants</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'res' %}">Restoran</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'res2' %}">Restoran2</a></li>
+                </ul>
+
+							</li>
+
+                <li class="nav-item"><a class="nav-link" href="{% url 'order-summary' %}">Cart</a>
+              <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Log out</a>
+              {% else %}
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Restaurants</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'res' %}">Restoran</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'res2' %}">Restoran2</a></li>
+                </ul>
+							</li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Registration</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a>
+             {% endif %}
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+
+
+{% block extra_head %}
+  {% endblock %}
+    {% block content %}
+    {% endblock content %}
+
+    {% block extra_body %}
+    {% endblock %}
+
+    {% include "main/footer.html" %}
+    {% include "main/scripts.html" %}
+
+    {% block extra_scripts %}
+    {% endblock extra_scripts %}
+
+
+  </section>
+	<!-- ================ contact section end ================= -->
+
+
+  <!-- ================ start footer Area ================= -->
+
+  <!-- ================ End footer Area ================= -->
+
+
+  <script src="{% static 'main/js/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'main/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.nice-select.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.ajaxchimp.min.js' %}"></script>
+  <script src="{% static 'main/js/mail-script.js' %}"></script>
+  <script src="{% static 'main/js/main.js' %}"></script>
+
+  <script src="{% static 'main/js/jquery.form.js' %}"></script>
+  <script src="{% static 'main/js/jquery.validate.min.js' %}"></script>
+  <script src="{% static 'main/js/contact.js' %}"></script>
+</body>
+</html>

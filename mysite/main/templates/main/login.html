@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class = "top-bar">
+    <section class="top-bar-section">
+    <ul class="right">
+    {% if users %}
+        <li><a href="main/logout/">{{users.user_name}}</a></li>
+    {% else %}
+         <li><a href="main/loginn/">{{users.user_surname}}</a></li>
+    {% endif %}
+    </ul></section>
+</div>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sneaky Restaurant - Home</title>
+	<link rel="icon" href="{% static 'main/img/fresh-food-icon.png' %}" type="{% static 'main/image/png' %}">
+
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/magnific-popup.css' %}">
+
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+
+  <!--================ Header Menu Area start =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <a class="navbar-brand logo_h" href="index.html"><img src="{% static 'main/img/logo.png' %}" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+              {% if user.is_authenticated %}
+
+               <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">{{user.username}}</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'password_change' %}">Change password</a>
+
+                  <li class="nav-item"><a class="nav-link" href="{% url 'history' %}">History of oreders</a>
+
+                  <li class="nav-item"><a class="nav-link" href="{% url 'password_change' %}"></a>
+                </ul>
+							</li>
+
+
+                 <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Time</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'din' %}">Dinner</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'res' %}">Breakfast</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'res' %}">Lunch</a></li>
+                </ul>
+
+							</li>
+
+
+
+
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Restaurants</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'res' %}">Burger King</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'res2' %}">Restoran2</a></li>
+                </ul>
+
+							</li>
+
+                <li class="nav-item"><a class="nav-link" href="{% url 'order-summary' %}">Cart</a>
+              <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Log out</a>
+              {% else %}
+              <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">Restaurants</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'res' %}">Burger King</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'res2' %}">Restoran2</a></li>
+                </ul>
+							</li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Registration</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a>
+             {% endif %}
+
+            </ul>
+          </div> 
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!--================Header Menu Area =================-->
+
+  <!--================Hero Banner Section start =================-->
+  <section class="hero-banner">
+    <div class="hero-wrapper">
+      <div class="hero-left">
+        <h1 class="hero-title">Foods the <br> most precious things</h1>
+        <div class="d-sm-flex flex-wrap">
+          <a class="hero-banner__video" href="https://www.youtube.com/watch?v=zeGupB528L8">Watch Video</a>
+        </div>
+        <ul class="hero-info d-none d-lg-block">
+          <li>
+            <img src="{% static 'main/img/fas-service-icon.png' %}" alt="">
+            <h4>Fast Service</h4>
+          </li>
+          <li>
+            <img src="{% static 'main/img/fresh-food-icon.png' %}" alt="">
+            <h4>Fresh Food</h4>
+          </li>
+          <li>
+            <img src="{% static 'main/img/support-icon.png' %}" alt="">
+            <h4>24/7 Support</h4>
+          </li>
+        </ul>
+      </div>
+      <div class="hero-right">
+        <div class="owl-carousel owl-theme hero-carousel">
+          <div class="hero-carousel-item">
+            <img class="img-fluid" src="{% static 'main/img/myasoPoTayski.png' %}" alt="">
+          </div>
+          <div class="hero-carousel-item">
+            <img class="img-fluid" src="{% static 'main/img/indexPage.png' %}" alt="">
+          </div>
+          <div class="hero-carousel-item">
+            <img class="img-fluid" src="{% static 'main/img/hero-banner1.png' %}" alt="">
+          </div>
+          <div class="hero-carousel-item">
+            <img class="img-fluid" src="{% static 'main/img/hero-banner2.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+      <ul class="social-icons d-none d-lg-block">
+        <li><a href="https://www.facebook.com/iitukz/posts/437015326486190/"><i class="ti-facebook"></i></a></li>
+        <li><a href="https://twitter.com/iitukz"><i class="ti-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com/iitu_kz/?hl=ru"><i class="ti-instagram"></i></a></li>
+      </ul>
+    </div>
+  </section>
+  <!--================Hero Banner Section end =================-->
+
+  
+  <!--================About Section start =================-->
+  <section class="about section-margin pb-xl-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xl-6 mb-5 mb-md-0 pb-5 pb-md-0">
+          <div class="img-styleBox">
+            <div class="styleBox-border">
+              <img class="styleBox-img1 img-fluid" src="{% static 'main/img/home/about-img1.png' %}" alt="">
+            </div>
+            <img class="styleBox-img2 img-fluid" src="{% static 'main/img/home/about-img2.png' %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 pl-md-5 pl-xl-0 offset-xl-1 col-xl-5">
+          <div class="section-intro mb-lg-4">
+            <h4 class="intro-title">SO TASTY</h4>
+            <h2>We speak the good food language</h2>
+          </div>
+          <p>A food is something that provides nutrients. Nutrients are substances that provide: energy for activity, growth, and all functions of the body such as breathing, digesting food, and keeping warm; materials for the growth and repair of the body, and for keeping the immune system healthy. So welcome to our food store site "SO TASTY". We wish you pleasant shopping!</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================About Section End =================-->
+
+
+  <!--================Featured Section Start =================-->
+  <section class="section-margin mb-lg-100">
+    <div class="container">
+      <div class="section-intro mb-75px">
+        <h4 class="intro-title">Featured Food</h4>
+        <h2>Fresh taste and great price</h2>
+      </div>
+
+
+      <div class="owl-carousel owl-theme featured-carousel">
+        {% for food in object_list %}
+          <form>
+        <div class="featured-item">
+          <img class="card-img rounded-0" src="{{food.img.url}}" alt="">
+          <div class="item-body">
+            <a href="#">
+              <h3>{{food.food_name}}</h3>
+            </a>
+                 <p>{{ food.description|linebreaksbr }}</p>
+                   <h3 class="price-tag">{{ food.price|linebreaksbr }}$</h3>
+                  <div class="d-flex justify-content-between">
+                  </div>
+                   <a href="{{ food.get_add_to_cart_url }}" class="button button-hero button-shadow">
+                    Order
+                    <i class="fas fa-shopping-cart ml-1"></i>
+                  </a>
+          </div>
+        </div>
+
+
+              </form>
+{% endfor %}
+
+
+
+
+      </div>
+    </div>
+  </section>
+  <!--================Featured Section End =================-->
+
+  <!--================Blog section start =================-->  
+  <section class="section-margin">
+    <div class="container">
+      <div class="section-intro mb-75px">
+        <h4 class="intro-title"></h4>
+        <h2>Have a good meal</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="card-blog">
+            <img class="card-img rounded-0" src="{% static 'main/img/blog/blog1.png' %}" alt="">
+            <div class="blog-body">
+              <ul class="blog-info">
+              </ul>
+              <a href="#">
+                <h3>Huge cavity in antarctic glacie signals rapid</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="card-blog">
+            <img class="card-img rounded-0" src="{% static 'main/img/blog/blog2.png' %}" alt="">
+            <div class="blog-body">
+              <ul class="blog-info">
+              </ul>
+              <a href="#">
+                <h3>Researcher unearths age
+                    in the desert</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="card-blog">
+            <img class="card-img rounded-0" src="{% static 'main/img/blog/blog3.png' %}" alt="">
+            <div class="blog-body">
+              <ul class="blog-info">
+              </ul>
+              <a href="#">
+                <h3>High-protein rice brings
+                    value, nutrition</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================Blog section end =================-->  
+
+
+  <!-- ================ start footer Area ================= -->
+  <footer class="footer-area section-gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+					<h4>Top Products</h4>
+					<ul>
+						<li><a href="#">Managed Website</a></li>
+						<li><a href="#">Manage Reputation</a></li>
+						<li><a href="#">Power Tools</a></li>
+						<li><a href="#">Marketing Service</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+					<h4>Quick Links</h4>
+					<ul>
+						<li><a href="#">Jobs</a></li>
+						<li><a href="#">Brand Assets</a></li>
+						<li><a href="#">Investor Relations</a></li>
+						<li><a href="#">Terms of Service</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+					<h4>Features</h4>
+					<ul>
+						<li><a href="#">Jobs</a></li>
+						<li><a href="#">Brand Assets</a></li>
+						<li><a href="#">Investor Relations</a></li>
+						<li><a href="#">Terms of Service</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+					<h4>Resources</h4>
+					<ul>
+						<li><a href="#">Guides</a></li>
+						<li><a href="#">Research</a></li>
+						<li><a href="#">Experts</a></li>
+						<li><a href="#">Agencies</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-4 col-md-8 mb-4 mb-xl-0 single-footer-widget">
+					<h4>Newsletter</h4>
+          <p>You can trust us. we only send promo offers,</p>
+
+          <div class="form-wrap" id="mc_embed_signup">
+            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+            method="get">
+              <div class="input-group">
+                <input type="email" class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
+                <div class="input-group-append">
+                  <button class="btn click-btn" type="submit">
+                    <i class="ti-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div style="position: absolute; left: -5000px;">
+								<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+							</div>
+
+							<div class="info"></div>
+            </form>
+          </div>
+
+				</div>
+			</div>
+			<div class="footer-bottom row align-items-center text-center text-lg-left">
+				<p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				<div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+					<a href="#"><i class="ti-facebook"></i></a>
+					<a href="#"><i class="ti-twitter-alt"></i></a>
+					<a href="#"><i class="ti-dribbble"></i></a>
+					<a href="#"><i class="ti-linkedin"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+  <!-- ================ End footer Area ================= -->
+
+
+
+
+  <script src="{% static 'main/js/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'main/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.nice-select.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.ajaxchimp.min.js' %}"></script>
+  <script src="{% static 'main/js/mail-script.js' %}"></script>
+  <script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html>
